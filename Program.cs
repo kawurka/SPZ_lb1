@@ -127,22 +127,21 @@ namespace SPZ_lb1
             string account = Console.ReadLine();
             if(!Regex.IsMatch(account, @"^[0-9]+$") || account.Length != 8)
             {
+                account = "";
                 Console.WriteLine("Incorrect output... again... Try again!");
-                Console.ReadLine();
+                account = Console.ReadLine();
             }
             Bank acc = new Bank(FIO, account, 348569);
             Console.WriteLine(acc.ToString());
-            acc.add_depos("Privat",9, 8323);
-            acc.add_depos("Sber", 5, 2021);
-            acc.add_depos("Mono", 11, 10984);
+            acc.add_depos("Privatbank",9, 8323);
+            acc.add_depos("Sberbank", 5, 2021);
+            acc.add_depos("Monobank", 11, 10984);
             acc.dep_per();
             acc.add_balance();
             acc.remove_balance();
             acc.all_dep_sum();
-            acc.remove_deposite("Sber");
+            acc.remove_deposite("Sberbank");
             acc.all_dep_sum();
         }
     }
-   
-    
 }
